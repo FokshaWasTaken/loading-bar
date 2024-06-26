@@ -1,0 +1,33 @@
+{
+	"schemaVersion": 1,
+	"id": "og-progress-bar",
+	"version": "${version}",
+	"name": "OG Progress Bar",
+	"description": "Brings back the old world loading progress bar.",
+	"authors": [
+		"Foksha"
+	],
+	"contact": {
+		"homepage": "https://modrinth.com/user/Foksha",
+		"sources": "https://github.com/FokshaWasTaken/progress-bar"
+	},
+	"license": "CC0-1.0",
+	"icon": "assets/og-progress-bar/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"me.foksha.OGProgressBar"
+		]
+	},
+	"mixins": [
+		"og-progress-bar.mixins.json"
+	],
+	"depends": {
+		"fabricloader": ">=0.15.11",
+		"minecraft": "~1.20",
+		"java": ">=17",
+		"fabric-api": "*"
+	},
+	"suggests": {
+	}
+}
