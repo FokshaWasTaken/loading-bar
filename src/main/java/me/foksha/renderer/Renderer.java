@@ -18,12 +18,12 @@ public class Renderer {
     static String[] loadingStrings = new String[]{"Raising..", "Soiling..", "Eroding..", "Building terrain"};
 
     public static void renderBar(DrawContext context, int percentage, int x, int y) {
-        context.drawTexture(emptyBar, x, y, 0, 0, 128, 4, 128, 4);
+        context.drawTexture(emptyBar, x, y, 0, 0, 96, 2, 96, 2);
 
-        int fullBarWidth = (percentage * 128) / 100;
+        int fullBarWidth = (percentage * 96) / 100;
 
         if (fullBarWidth > 0) {
-            context.drawTexture(fullBar, x, y, 0, 0, fullBarWidth, 4, 128, 4);
+            context.drawTexture(fullBar, x, y, 0, 0, fullBarWidth, 2, 96, 2);
         }
     }
 
@@ -37,7 +37,7 @@ public class Renderer {
         } else {
             text = loadingStrings[3];
         }
-        context.drawCenteredTextWithShadow(textRenderer, "Loading level", x, y - 9 / 2 - 50, 16777215);
+        context.drawCenteredTextWithShadow(textRenderer, "Loading level", x, y - 9 / 2 - 45, 16777215);
 
         context.drawCenteredTextWithShadow(textRenderer, text, x, y - 9 / 2 - 25, 16777215);
     }

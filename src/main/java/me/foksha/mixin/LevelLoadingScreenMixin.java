@@ -52,7 +52,7 @@ public abstract class LevelLoadingScreenMixin {
 		int x = client.currentScreen.width / 2;
 		int y = client.currentScreen.height / 2;
 		int percentage = this.progressProvider.getProgressPercentage();
-		Renderer.renderBar(context, percentage, x - 64, y);
+		Renderer.renderBar(context, percentage, x - 48, y);
 		Renderer.renderText(context, client.textRenderer, x, y + 15, percentage);
 	}
 }
