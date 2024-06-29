@@ -11,5 +11,6 @@ public class OGProgressBar implements ModInitializer {
 
 	@Override
 	public void onInitialize() {
+		LOGGER.info("Old world loading screen is back!");
 	}
 }
