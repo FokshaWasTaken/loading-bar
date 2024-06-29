@@ -3,7 +3,7 @@
 	"id": "og-progress-bar",
 	"version": "${version}",
 	"name": "OG Progress Bar",
-	"description": "Brings back the old world loading progress bar.",
+	"description": "Brings back the old world loading progress bar to Modern Minecraft.",
 	"authors": [
 		"Foksha"
 	],
@@ -24,7 +24,7 @@
 	],
 	"depends": {
 		"fabricloader": ">=0.15.11",
-		"minecraft": "~1.20",
+		"minecraft": ">=1.20",
 		"java": ">=17",
 		"fabric-api": "*"
 	},

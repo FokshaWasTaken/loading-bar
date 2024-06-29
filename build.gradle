@@ -20,13 +20,11 @@ repositories {
 
 dependencies {
 	// To change the versions see the gradle.properties file
-	minecraft "com.mojang:minecraft:${project.minecraft_version}"
-	mappings "net.fabricmc:yarn:${project.yarn_mappings}:v2"
-	modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
+	modImplementation "net.fabricmc:fabric-loader:${property('deps.floader')}"
+	minecraft "com.mojang:minecraft:${property('deps.minecraft')}"
+	mappings "net.fabricmc:yarn:${property('deps.yarn')}:v2"
 
-	// Fabric API. This is technically optional, but you probably want it anyway.
-	modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
-	
+	modImplementation "net.fabricmc.fabric-api:fabric-api:${property('deps.fabric-api')}"
 }
 
 processResources {
@@ -38,7 +36,7 @@ processResources {
 }
 
 tasks.withType(JavaCompile).configureEach {
-	it.options.release = 17
+	it.options.release = 8
 }
 
 java {
@@ -46,9 +44,6 @@ java {
 	// if it is present.
 	// If you remove this line, sources will not be generated.
 	withSourcesJar()
-
-	sourceCompatibility = JavaVersion.VERSION_17
-	targetCompatibility = JavaVersion.VERSION_17
 }
 
 jar {
@@ -75,9 +70,8 @@ publishing {
 	}
 }
 loom {
-	decompilers {
-		vineflower {
-			maxThreads = 4
-		}
+	runConfigs.all {
+		ideConfigGenerated true // Run configurations are not created for subprojects by default
+		runDir "../../run" // Use a shared run folder and just create separate worlds
 	}
 }

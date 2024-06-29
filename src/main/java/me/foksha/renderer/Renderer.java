@@ -7,8 +7,13 @@ import net.minecraft.util.Identifier;
 import java.util.Random;
 
 public class Renderer {
+    /*? if <=1.20.6 {*/
     static Identifier emptyBar = new Identifier("og-progress-bar", "textures/emptybar.png");
     static Identifier fullBar = new Identifier("og-progress-bar", "textures/fullbar.png");
+    /*?} else {*/
+    /*static Identifier emptyBar = Identifier.of("og-progress-bar", "textures/emptybar.png");
+    static Identifier fullBar = Identifier.of("og-progress-bar", "textures/fullbar.png");
+    *//*?}*/
 
     static String[] loadingStrings = new String[]{"Raising..", "Soiling..", "Eroding..", "Building terrain"};
 
